@@ -1,143 +1,36 @@
-# JavaScript Frameworks – Online Shop
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-An online shop built with **React**, **Next.js**, and **TypeScript**, developed as part of the **JavaScript Frameworks** course assignment at **Noroff**.  
-The application focuses on API integration, state management, and building a responsive e-commerce experience using a modern JavaScript framework.
+## Getting Started
 
----
-
-## 📋 Assignment Context
-
-**Course:** JavaScript Frameworks
-
-The goal of this assignment is to demonstrate understanding of JavaScript frameworks by building a functional online shop with product browsing, cart functionality, and supporting pages.
-
----
-
-## 🌐 Live Demo
-
-- **Live site:** TODO  
-- **GitHub repository:** TODO
-
----
-
-## 🛍️ Planned Features
-
-- Product listing fetched from API
-- Product detail pages with dynamic routing
-- Search functionality
-- Shopping cart with quantity handling and totals
-- Checkout success page
-- Contact form with validation
-- Fully responsive layout
-
----
-
-## 🧱 Tech Stack
-
-- **React**
-- **Next.js**
-- **TypeScript** (strict type checking)
-- **Tailwind CSS** – utility-first CSS framework
-- **API:** Noroff Online Shop API (v2)
-- **Hosting:** TODO
-
----
-
-## 🔌 API
-
-- **Base endpoint:** `/online-shop`
-- **Endpoints:**
-  - `GET /online-shop`
-  - `GET /online-shop/<id>`
-
-API usage follows the official Noroff documentation.
-
----
-
-## 🚀 Getting Started (Local Development)
-
-### Prerequisites
-- Node.js (LTS)
-- npm
-
-### Installation
-
-```bash
-git clone TODO
-cd TODO
-npm install
-```
-
-### Environment Variables
-
-Create a `.env.local` file:
-
-```
-NEXT_PUBLIC_NOROFF_API_KEY=your-api-key-here
-```
-
-### Run the App
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🏗️ Project Structure (Planned)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```
-/app or /pages
-/components
-/hooks
-/services
-/types
-/styles
-```
+## Learn More
 
-The structure is designed to keep UI, logic, and data concerns clearly separated.
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🧭 User Stories (High Level)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- As a user, I can browse products and view details.
-- As a user, I can search for products.
-- As a user, I can add products to a cart and manage quantities.
-- As a user, I can complete a checkout flow.
-- As a user, I can contact the shop via a validated form.
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## ✅ Assignment Requirements Checklist
-
-- [ ] Next.js framework
-- [ ] TypeScript used throughout the project
-- [ ] Integration with Noroff Online Shop API
-- [ ] Product list and product detail pages
-- [ ] Shopping cart with state management
-- [ ] Checkout success page
-- [ ] Contact form with validation
-- [ ] Responsive design
-- [ ] Live demo deployed
-
----
-
-## 📄 License
-
-© 2026 **Martin Fischer** & **Malin Skrettingland**. All rights reserved.
-
-This project and its source code are protected under copyright law.  
-No part of this project may be reused, modified, or distributed without explicit permission from the authors.
-
----
-
-## 👤 Authors
-
-- **Martin Fischer**  
-  Frontend Development Student – Noroff  
-
-- **Malin Skrettingland**  
-  Frontend Development Student – Noroff  
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
