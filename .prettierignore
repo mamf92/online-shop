@@ -1,0 +1,23 @@
+# Node dependencies
+node_modules
+
+# Next.js build output
+.next
+out
+dist
+
+
+# Build and test artifacts
+build
+coverage
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Package files
+package-lock.json
+
+# GitHub files
+.github 
