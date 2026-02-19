@@ -1,9 +1,16 @@
 import Link from 'next/link';
-import { getAllProducts } from '@/src/features/products/services/productsService';
+import {
+  getAllProducts,
+  getSortedProducts,
+} from '@/src/features/products/services/productsService';
+
+function getSortedProductsByPrice() {
+  return getSortedProducts({ sortField: 'price', sortOrder: 'asc' });
+}
 
 export default async function Home() {
   const products = await getAllProducts();
-
+  const sortedProducts = await getSortedProductsByPrice();
   return (
     <div className="min-h-screen">
       <header className="border-foreground/10 border-b">
@@ -34,6 +41,18 @@ export default async function Home() {
               <Link href={`/products/${product.id}`} className="hover:underline">
                 {product.title}
               </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="text-foreground/70 mt-2 text-sm">Sorted products by price!</p>
+        <ul>
+          {sortedProducts.data.map((product) => (
+            <li key={product.id}>
+              <Link href={`/products/${product.id}`} className="hover:underline">
+                {product.title}
+              </Link>
+              <span className="text-foreground/50 ml-2 text-xs">(${product.price})</span>
             </li>
           ))}
         </ul>
