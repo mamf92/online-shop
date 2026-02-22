@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllProducts } from '@/src/features/products/services/productsService';
+import { getAllProducts } from '@/features/products/services/productsService';
 
 export default async function Home() {
   const products = await getAllProducts();
