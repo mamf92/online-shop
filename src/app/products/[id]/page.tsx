@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getProductById } from '@/src/features/products/services/singleProductService';
 
 type ProductPageProps = {
   params: Promise<{ id: string }>;
@@ -6,6 +7,7 @@ type ProductPageProps = {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
+  const product = await getProductById(id);
 
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-10">
@@ -13,6 +15,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <p className="text-foreground/70 mt-2 text-sm">
         Route param: <span className="font-mono">{id}</span>
       </p>
+      <div>
+        <h2 className="mt-4 text-xl font-semibold">{product.data.title}</h2>
+        <p className="text-foreground/70 mt-2 text-sm">{product.data.description}</p>
+      </div>
 
       <div className="mt-6 flex flex-wrap gap-4 text-sm">
         <Link href="/" className="hover:underline">
