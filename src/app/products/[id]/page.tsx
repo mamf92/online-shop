@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProductById } from '@/src/features/products/services/singleProductService';
+import { getProductById } from '@/features/products/services/singleProductService';
 
 type ProductPageProps = {
   params: Promise<{ id: string }>;
