@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { getProductById } from '@/features/products/services/productsService';
-import { ProductCard } from './productCard';
-import { Thumbnail } from './Thumbnail';
-
+import { getProductById } from '@/components/features/products/services/product-service';
+import { ProductCard } from '@/components/features/products/product-card';
+import { Thumbnail } from '@/components/features/products/thumbnail';
 type ProductPageProps = {
   params: Promise<{ id: string }>;
 };

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {
   getAllProducts,
   getSortedProducts,
-} from '@/src/features/products/services/productsService';
+} from '@/components/features/products/services/product-service';
 
 function getSortedProductsByPrice() {
   return getSortedProducts({ sortField: 'price', sortOrder: 'asc' });
