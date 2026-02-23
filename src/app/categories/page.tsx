@@ -1,4 +1,4 @@
-import CategoryDivider from './components/CategoryDivider';
+import CategoryDivider from '@/components/features/categories/components/category-devider';
 
 export default function CategoriesPage() {
   return (

@@ -22,7 +22,7 @@ export default function CategoryDivider() {
                 height={160}
                 className="mb-4 h-16 w-16 object-cover sm:h-24 sm:w-24 md:h-40 md:w-40"
               />
-              <p className="text-center text-sm font-heading text-muted-brown uppercase">
+              <p className="font-heading text-muted-brown text-center text-sm uppercase">
                 {item.name}
               </p>
             </div>
