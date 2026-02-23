@@ -16,7 +16,7 @@ export function ProductCard({ product }: CardProps) {
           <p className="font-label text-muted-brown text-sm">{product.tags.join(', ')}</p>
 
           <h3 className="font-label mt-6 text-base sm:mt-12">Description</h3>
-          <p className="font-body text-foreground/70 mx-auto mt-2 max-w-[200px] text-xs">
+          <p className="font-body text-foreground/70 mx-auto mt-2 max-w-50 text-xs">
             {product.description}
           </p>
 
@@ -29,7 +29,7 @@ export function ProductCard({ product }: CardProps) {
             alt={product.image.alt}
             width={300}
             height={300}
-            className="w-full sm:max-w-[300px]"
+            className="w-full sm:max-w-75"
           />
         </div>
       </div>
