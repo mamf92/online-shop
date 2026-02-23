@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { getProductById } from '@/features/products/services/singleProductService';
-
+import { getProductById } from '@/components/features/products/services/product-service';
+import { ProductCard } from '@/components/features/products/product-card';
+import { Thumbnail } from '@/components/features/products/thumbnail';
 type ProductPageProps = {
   params: Promise<{ id: string }>;
 };
@@ -11,14 +12,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-10">
-      <h1 className="text-2xl font-semibold tracking-tight">Product</h1>
-      <p className="text-foreground/70 mt-2 text-sm">
-        Route param: <span className="font-mono">{id}</span>
-      </p>
-      <div>
-        <h2 className="mt-4 text-xl font-semibold">{product.data.title}</h2>
-        <p className="text-foreground/70 mt-2 text-sm">{product.data.description}</p>
-      </div>
+      <ProductCard product={product.data} />
 
       <div className="mt-6 flex flex-wrap gap-4 text-sm">
         <Link href="/" className="hover:underline">
@@ -31,6 +25,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
           /category/example
         </Link>
       </div>
+
+      <Thumbnail product={product.data} />
     </main>
   );
 }
