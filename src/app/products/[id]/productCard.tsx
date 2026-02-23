@@ -31,7 +31,7 @@ export function ProductCard({ product }: CardProps) {
             alt={product.image.alt}
             width={300}
             height={300}
-            className="w-full sm:max-w-[300px]"
+            className="w-full sm:max-w-75"
           />
         </div>
       </div>
