@@ -1,7 +1,7 @@
 import { Product } from '@/types/product';
 import { PaginatedResponse, SingleResponse } from '@/types/api/api-response-types';
 import { get } from '@/lib/noroff/api-client';
-import { PaginationOptions } from '@/types/api/pagination';
+import { PaginationOptions, SortingOptions } from '@/types/api/serviceOptions';
 
 export async function getProductById(productId: string): Promise<SingleResponse<Product>> {
   const response = await get<SingleResponse<Product>>(`/online-shop/${productId}`);
