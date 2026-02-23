@@ -9,7 +9,7 @@ interface CardProps {
 export function ProductCard({ product }: CardProps) {
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="font-hero text-accent text-center text-4xl">{product.title}</h1>
+      <h1 className="font-hero text-accent text-center text-[2rem]">{product.title}</h1>
       <div className="flex items-start gap-0 px-6 pt-8 sm:items-center">
         <div className="w-1/3 flex-shrink-0 text-center sm:w-auto sm:max-w-none sm:flex-shrink-0">
           <h2 className="font-heading text-lg uppercase">{product.tags[0]}</h2>

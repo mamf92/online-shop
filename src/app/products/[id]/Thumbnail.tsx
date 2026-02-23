@@ -19,7 +19,7 @@ export function Thumbnail({ product }: ThumbnailProps) {
         />
       </div>
       <div className="flex justify-between gap-2 text-xs">
-        <h3 className="font-heading text-black">{product.tags[0]}</h3>
+        <h3 className="font-heading text-sm text-black">{product.tags[0]}</h3>
         <p className="font-label text-black">{product.price}$</p>
       </div>
       <p className="font-label line-clamp-2 text-xs text-black">{product.title}</p>
