@@ -18,7 +18,7 @@ export function ProductCard({ product }: CardProps) {
           </p>
 
           <h3 className="font-label mt-6 text-base sm:mt-12">Description</h3>
-          <p className="font-body text-foreground/70 mx-auto mt-2 max-w-[200px] text-xs">
+          <p className="font-body text-foreground/70 mx-auto mt-2 max-w-50 text-xs">
             {product.description}
           </p>
 
