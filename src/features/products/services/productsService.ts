@@ -1,5 +1,5 @@
 import { Product } from '@/src/types/product';
-import { PaginatedResponse } from '@/src/types/api/api-response-types';
+import { PaginatedResponse, SingleResponse } from '@/src/types/api/api-response-types';
 import { get } from '@/src/lib/noroff/api-client';
 import { PaginationOptions, SortingOptions } from '@/src/types/serviceOptions';
 
