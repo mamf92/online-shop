@@ -18,3 +18,12 @@ export async function getPaginatedProducts({
 }: PaginationOptions): Promise<PaginatedResponse<Product>> {
   return await get<PaginatedResponse<Product>>(`/online-shop?page=${page}&limit=${limit}`);
 }
+
+export async function getSortedProducts({
+  sortField = 'title',
+  sortOrder = 'desc',
+}: SortingOptions): Promise<PaginatedResponse<Product>> {
+  return await get<PaginatedResponse<Product>>(
+    `/online-shop?sort=${sortField}&sortOrder=${sortOrder}`,
+  );
+}
