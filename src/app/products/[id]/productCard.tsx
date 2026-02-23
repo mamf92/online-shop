@@ -9,13 +9,11 @@ interface CardProps {
 export function ProductCard({ product }: CardProps) {
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="font-hero text-center text-4xl text-[var(--color-accent)]">{product.title}</h1>
+      <h1 className="font-hero text-accent text-center text-4xl">{product.title}</h1>
       <div className="flex items-start gap-0 px-6 pt-8 sm:items-center">
         <div className="w-1/3 flex-shrink-0 text-center sm:w-auto sm:max-w-none sm:flex-shrink-0">
           <h2 className="font-heading text-lg uppercase">{product.tags[0]}</h2>
-          <p className="font-label text-sm text-[var(--color-muted-brown)]">
-            {product.tags.join(', ')}
-          </p>
+          <p className="font-label text-muted-brown text-sm">{product.tags.join(', ')}</p>
 
           <h3 className="font-label mt-6 text-base sm:mt-12">Description</h3>
           <p className="font-body text-foreground/70 mx-auto mt-2 max-w-[200px] text-xs">

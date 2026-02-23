@@ -8,7 +8,7 @@ interface ThumbnailProps {
 
 export function Thumbnail({ product }: ThumbnailProps) {
   return (
-    <div className="w-40 rounded-sm bg-[var(--color-muted-brown)] p-2">
+    <div className="bg-muted-brown w-40 rounded-sm p-2">
       <div className="-mx-1 -mt-1 mb-2 flex justify-center">
         <Image
           src={product.image.url}
