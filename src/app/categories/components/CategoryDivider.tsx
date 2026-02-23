@@ -7,7 +7,7 @@ export default function CategoryDivider() {
   ];
 
   return (
-    <div className="w-full bg-[var(--color-primary-brown)] px-6 py-10">
+    <div className="w-full bg-primary-brown px-6 py-10">
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-row justify-center gap-8 sm:gap-6 md:gap-4">
           {items.map((item) => (
