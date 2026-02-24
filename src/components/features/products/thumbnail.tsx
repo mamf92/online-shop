@@ -1,6 +1,7 @@
 import React from 'react';
 import { Product } from '@/types/product';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ThumbnailProps {
   product: Product;
@@ -8,7 +9,11 @@ interface ThumbnailProps {
 
 export function Thumbnail({ product }: ThumbnailProps) {
   return (
-    <div className="bg-muted-brown w-40 rounded-sm p-2">
+    <Link
+      href={`/products/${product.id}`}
+      className="bg-muted-brown block w-40 rounded-sm p-2"
+      aria-label={`View ${product.title}`}
+    >
       <div className="-mx-1 -mt-1 mb-2 flex justify-center">
         <Image
           src={product.image.url}
@@ -23,6 +28,6 @@ export function Thumbnail({ product }: ThumbnailProps) {
         <p className="font-label text-black">{product.price}$</p>
       </div>
       <p className="font-label line-clamp-2 text-xs text-black">{product.title}</p>
-    </div>
+    </Link>
   );
 }
