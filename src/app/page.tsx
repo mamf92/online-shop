@@ -3,6 +3,7 @@ import {
   getAllProducts,
   getSortedProducts,
 } from '@/components/features/products/services/product-service';
+import { ProductGrid } from '@/components/features/products/product-grid';
 
 function getSortedProductsByPrice() {
   return getSortedProducts({ sortField: 'price', sortOrder: 'asc' });
@@ -34,6 +35,14 @@ export default async function Home() {
 
       <main className="mx-auto w-full max-w-3xl px-6 py-10">
         <h1 className="text-2xl font-semibold tracking-tight">Home</h1>
+
+        <section className="mt-6">
+          <h2 className="text-sm font-semibold">Products</h2>
+          <div className="mt-3">
+            <ProductGrid products={products.data} />
+          </div>
+        </section>
+
         <p className="text-foreground/70 mt-2 text-sm">All Products!</p>
         <ul>
           {products.data.map((product) => (
