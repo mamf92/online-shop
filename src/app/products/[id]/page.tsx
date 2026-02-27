@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getProductById } from '@/components/features/products/services/product-service';
 import { ProductCard } from '@/components/features/products/product-card';
-import { Thumbnail } from '@/components/features/products/thumbnail';
+import { CustomerReviewsList } from '@/components/features/products/customer-reviews-list';
 type ProductPageProps = {
   params: Promise<{ id: string }>;
 };
@@ -26,7 +26,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </Link>
       </div>
 
-      <Thumbnail product={product.data} />
+      <CustomerReviewsList reviews={product.data.reviews} />
     </main>
   );
 }
