@@ -57,7 +57,7 @@ export function CustomerReviewsCard({ review, isFirst = true }: CustomerReviewsC
       </div>
       <div className="flex w-2/3 flex-col items-center justify-center">
         <p className="font-label text-xs text-foreground">{review.username}</p>
-        <p className="font-label mt-2 text-center text-sm text-white">
+        <p className="font-label mt-2 text-center text-sm text-foreground">
           &quot; {review.description} &quot;
         </p>
         <div className="mt-1 flex gap-1">
