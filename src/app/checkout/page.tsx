@@ -12,7 +12,7 @@ const mockLines = [
       price: 29.99,
       discountedPrice: 19.99,
       image: {
-        url: '/images/ExampleProduct.jpg',
+        url: '/images/Moodimage.jpg',
         alt: 'Example Product Image',
       },
       rating: 4,
@@ -37,7 +37,7 @@ const mockLines = [
       price: 49.99,
       discountedPrice: 39.99,
       image: {
-        url: '/images/AnotherProduct.jpg',
+        url: '/images/Moodimage02.jpg',
         alt: 'Another Product Image',
       },
       rating: 3,
