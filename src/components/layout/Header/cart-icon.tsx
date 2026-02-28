@@ -12,7 +12,7 @@ export default function CartIcon({
   return (
     <div className={`relative ${className}`}>
       {!!itemsCount && (
-        <div className="bg-accent text-primary font-heading absolute -top-2.5 -right-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full text-xs md:h-4 md:w-4 lg:h-5 lg:w-5 lg:text-xl">
+        <div className="bg-accent text-primary font-heading absolute -top-2.5 -right-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full text-xs md:h-4 md:w-4 lg:h-5 lg:w-5 lg:text-base">
           <span className="-translate-y-px lg:-translate-y-0.5">{itemsCount}</span>
         </div>
       )}
