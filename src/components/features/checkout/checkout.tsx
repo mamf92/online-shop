@@ -16,16 +16,16 @@ interface CheckoutProps {
 export function Checkout({ Lines, mode }: CheckoutProps) {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col px-6 py-10">
-      <div className="mb-4 flex w-full items-center justify-between">
-        <div className="p-2 text-left">Product</div>
-        <div className="p-2 text-left">Price</div>
-        <div className="p-2 text-left">Quantity</div>
-        <div className="p-2 text-left">Total</div>
+      <div className="font-heading bg-secondary mb-4 flex w-full items-center justify-between px-2 text-[14px] uppercase">
+        <div className="p-2">Product details</div>
+        <div className="p-2">Price</div>
+        <div className="p-2">Quantity</div>
+        <div className="p-2">Total</div>
       </div>
 
-      <div className="w-full">
+      <div className="mx-auto flex w-full max-w-3xl flex-col">
         {Lines.map((line) => (
-          <div key={line.id} className="flex items-center justify-between border p-2">
+          <div key={line.id} className="mb-4 flex items-center justify-between p-2">
             <div className="flex items-center">
               <Image
                 src={line.product.image.url}
