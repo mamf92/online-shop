@@ -5,7 +5,7 @@ type CartIconProps = {
 };
 
 export default function CartIcon({
-  cartClassName = 'h-6.5 md:h-7 lg:h-12.5 w-6.5 md:w-7 lg:w-12.5 text-accent',
+  cartClassName = 'h-5 w-5 text-accent',
   itemsCount,
   className,
 }: CartIconProps) {
