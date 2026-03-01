@@ -31,7 +31,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
         {mode === 'cart' && <div></div>}
       </div>
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col">
+      <div className="font-body mx-auto flex w-full max-w-3xl flex-col">
         {Lines.map((line) => (
           <div
             key={line.id}
@@ -67,6 +67,12 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
             )}
           </div>
         ))}
+      </div>
+      <div className="font-semibold-body px-6 py-2 text-right text-lg">
+        Total: $
+        {Lines.reduce((sum, line) => sum + line.quantity * line.product.discountedPrice, 0).toFixed(
+          2,
+        )}
       </div>
     </div>
   );
