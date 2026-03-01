@@ -5,15 +5,15 @@ type CartIconProps = {
 };
 
 export default function CartIcon({
-  cartClassName = 'h-5 w-5 text-accent',
+  cartClassName = 'h-6 w-6 text-accent',
   itemsCount,
   className,
 }: CartIconProps) {
   return (
     <div className={`relative ${className}`}>
       {!!itemsCount && (
-        <div className="bg-accent text-primary font-heading absolute -top-2.5 -right-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full text-xs md:h-4 md:w-4 lg:h-5 lg:w-5 lg:text-base">
-          <span className="-translate-y-px lg:-translate-y-0.5">{itemsCount}</span>
+        <div className="bg-accent text-primary font-heading absolute -top-2.5 -right-2.5 flex h-3.5 w-3.5 items-center justify-center rounded-full text-xs font-semibold md:h-4 md:w-4">
+          <span className="-translate-y-px">{itemsCount}</span>
         </div>
       )}
       <svg

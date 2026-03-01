@@ -24,7 +24,9 @@ export default function Header() {
       </Link>
       <TextLogo />
       <div className="flex items-center justify-end gap-4">
-        <CartIcon />
+        <Link href="/cart">
+          <CartIcon itemsCount={48} />
+        </Link>
         <div ref={menuRef}>
           <BurgerButton isOpen={isOpen} onToggle={handleToggle} />
           <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0 z-10`}>
