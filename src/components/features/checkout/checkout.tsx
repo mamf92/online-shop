@@ -1,4 +1,5 @@
 import react from 'react';
+import { Trash2 } from 'lucide-react';
 import { Product } from '@/types/product';
 import Image from 'next/image';
 
@@ -19,7 +20,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
       <div
         className={`font-heading bg-secondary mb-4 grid w-full items-center px-2 text-[14px] uppercase ${
           mode === 'cart'
-            ? 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr_0.8fr]'
+            ? 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr_0.3fr]'
             : 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr]'
         }`}
       >
@@ -27,7 +28,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
         <div className="p-2 text-right">Price</div>
         <div className="p-2 text-right">Quantity</div>
         <div className="p-2 text-right">Total</div>
-        {mode === 'cart' && <div className="p-2 text-right"></div>}
+        {mode === 'cart' && <div></div>}
       </div>
 
       <div className="mx-auto flex w-full max-w-3xl flex-col">
@@ -36,7 +37,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
             key={line.id}
             className={`mb-4 grid items-center p-2 ${
               mode === 'cart'
-                ? 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr_0.8fr]'
+                ? 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr_0.3fr]'
                 : 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr]'
             }`}
           >
@@ -59,7 +60,11 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
             <div className="p-2 text-right">
               ${(line.quantity * line.product.discountedPrice).toFixed(2)}
             </div>
-            {mode === 'cart' && <div className="p-2 text-right">Remove</div>}
+            {mode === 'cart' && (
+              <div className="text-right">
+                <Trash2 className="h-4 w-4" />
+              </div>
+            )}
           </div>
         ))}
       </div>
