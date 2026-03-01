@@ -61,7 +61,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
               ${(line.quantity * line.product.discountedPrice).toFixed(2)}
             </div>
             {mode === 'cart' && (
-              <div className="text-right">
+              <div className="sm:p-2">
                 <Trash2 className="h-4 w-4" />
               </div>
             )}
