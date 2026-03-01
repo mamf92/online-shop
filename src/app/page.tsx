@@ -14,25 +14,6 @@ export default async function Home() {
   const sortedProducts = await getSortedProductsByPrice();
   return (
     <div className="min-h-screen">
-      <header className="border-foreground/10 border-b">
-        <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-4">
-          <Link href="/" className="font-hero text-muted-brown text-sm font-semibold">
-            Skretcher
-          </Link>
-          <nav className="flex items-center gap-4 text-sm">
-            <Link href="/about" className="hover:underline">
-              About
-            </Link>
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
-            <Link href="/checkout" className="hover:underline">
-              Checkout
-            </Link>
-          </nav>
-        </div>
-      </header>
-
       <main className="mx-auto w-full max-w-3xl px-6 py-10">
         <h1 className="text-2xl font-semibold tracking-tight">Home</h1>
 
