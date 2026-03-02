@@ -2,7 +2,7 @@ type LogoProps = {
   className?: string;
 };
 
-export default function Logo({ className = 'h-7 w-7 text-[#F9C67A]' }: LogoProps) {
+export default function Logo({ className = 'h-10 w-10 text-[#F9C67A]' }: LogoProps) {
   return (
     <svg className={className} viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

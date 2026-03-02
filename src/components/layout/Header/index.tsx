@@ -18,15 +18,18 @@ export default function Header() {
 
   useClickOutside(menuRef, handleClose);
   return (
-    <header className="bg-primary text-accent relative grid grid-cols-[1fr_auto_1fr] items-center p-4 px-[10%]">
-      <Link href="/">
+    <header className="bg-primary text-accent sticky top-0 grid grid-cols-[auto_1fr_auto_1fr_auto] items-center p-4 md:px-[5%] lg:px-[10%]">
+      <Link href="/" className="col-1">
         <Logo />
       </Link>
-      <TextLogo />
-      <div className="flex items-center justify-end gap-4">
+      <div className="col-3">
+        <TextLogo />
+      </div>
+      <div className="col-5 flex items-center justify-end gap-3">
         <Link href="/cart">
           <CartIcon itemsCount={48} />
         </Link>
+
         <div ref={menuRef}>
           <BurgerButton isOpen={isOpen} onToggle={handleToggle} />
           <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0 z-10`}>
