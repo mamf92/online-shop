@@ -20,11 +20,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <HeroImage category={category} />
       <ProductGrid products={filteredProducts} className="mt-6" />
       <section className="mx-auto w-full max-w-3xl px-6 py-10">
-        <h1 className="text-2xl font-semibold tracking-tight">Category</h1>
-        <p className="text-foreground/70 mt-2 text-sm">
-          Route param: <span className="font-mono">{category}</span>
-        </p>
-
         <CategoryDivider />
 
         <div className="mt-6 flex flex-wrap gap-4 text-sm">
