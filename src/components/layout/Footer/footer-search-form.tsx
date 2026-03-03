@@ -26,7 +26,7 @@ function FooterSearchForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col items-center">
-      <div className="relative flex w-[calc(100%-2rem)] flex-col">
+      <div className="relative flex min-w-full flex-col">
         <label htmlFor="searchInput" className="font-heading font-base w-full text-left text-white">
           Search
         </label>
