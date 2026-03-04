@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function FooterLinks() {
   return (
-    <div className="border-accent flex w-full flex-col border-t px-4 py-2.5">
+    <div className="border-accent flex w-full flex-col px-4 py-2.5 max-sm:border-t sm:border-r">
       <div className="font-heading flex justify-around text-sm text-white md:text-2xl">
         <div className="flex flex-col py-2">
           <Link href="/categories" className="text-xl hover:underline">
