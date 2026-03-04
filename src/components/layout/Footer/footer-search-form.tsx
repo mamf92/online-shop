@@ -5,8 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { SearchFormSchema } from '@/schemas/search';
 import type { SearchFormData } from '@/schemas/search';
 import { Search } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 function FooterSearchForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -20,8 +22,8 @@ function FooterSearchForm() {
   });
 
   const onSubmit = (data: SearchFormData) => {
-    console.log('Zod-validated search data:', data);
-    // input search engine TODO
+    const query = data.query.trim();
+    router.push(`/?q=${encodeURIComponent(query)}`);
   };
 
   return (
