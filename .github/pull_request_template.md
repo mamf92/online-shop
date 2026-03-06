@@ -1,25 +1,31 @@
+### [Short descriptive title of your changes]
+
 ## Summary
 
-Brief description of what this PR does.
+Briefly describe the changes you made and their purpose. 
 
 ## Related Issue
 
-Closes #
+Closes: #issue-number
 
-## Changes
+---
 
--
--
--
+### Known Limitations
+
+List any known limitations or temporary workarounds. 
 
 ## How to Test
 
-1.
-2.
-3.
+1. 
+2. 
+3. 
 
-## Checklist
+---
 
-- [ ] Code builds and runs locally
-- [ ] Feature / fix works as expected
-- [ ] No unintended changes
+### Known Issues
+
+List any known issues or technical debt introduced by these changes. Example:
+
+### Follow-up tasks
+
+List new potential tasks. 
