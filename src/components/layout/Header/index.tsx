@@ -18,7 +18,7 @@ export default function Header() {
 
   useClickOutside(menuRef, handleClose);
   return (
-    <header className="bg-primary text-accent sticky top-0 grid grid-cols-[auto_1fr_auto_1fr_auto] items-center p-4 md:px-[5%] lg:px-[10%]">
+    <header className="bg-primary text-accent sticky top-0 z-50 grid grid-cols-[auto_1fr_auto_1fr_auto] items-center p-4 md:px-[5%] lg:px-[10%]">
       <Link href="/" className="col-1">
         <Logo />
       </Link>
@@ -32,7 +32,7 @@ export default function Header() {
 
         <div ref={menuRef}>
           <BurgerButton isOpen={isOpen} onToggle={handleToggle} />
-          <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0 z-10`}>
+          <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0 z-50`}>
             {isOpen && <BurgerMenu handleClose={handleClose} />}
           </div>
         </div>

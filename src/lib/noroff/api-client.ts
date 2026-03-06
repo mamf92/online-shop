@@ -25,6 +25,7 @@ export class ApiClientError extends Error {
 async function apiClient<T = unknown>(endpoint: string): Promise<T> {
   const config: RequestInit = {
     method: 'GET',
+    next: { revalidate: 3600 },
   };
 
   try {
