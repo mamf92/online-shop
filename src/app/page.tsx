@@ -3,7 +3,7 @@ import {
   getAllProducts,
   getSortedProducts,
 } from '@/components/features/products/services/product-service';
-import { ProductGrid } from '@/components/features/products/product-grid';
+import ProductGrid from '@/components/features/products/product-grid';
 
 function getSortedProductsByPrice() {
   return getSortedProducts({ sortField: 'price', sortOrder: 'asc' });
@@ -51,8 +51,8 @@ export default async function Home() {
           <h2 className="text-sm font-semibold">Quick links</h2>
           <ul className="mt-3 grid gap-2 text-sm">
             <li>
-              <Link href="/category/example" className="hover:underline">
-                /category/example
+              <Link href="/categories/example" className="hover:underline">
+                /categories/example
               </Link>
             </li>
             <li>
