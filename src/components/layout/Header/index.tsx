@@ -32,7 +32,7 @@ export default function Header() {
 
         <div ref={menuRef}>
           <BurgerButton isOpen={isOpen} onToggle={handleToggle} />
-          <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0`}>
+          <div className={`${isOpen ? 'block' : 'hidden'} absolute top-full right-0 z-50`}>
             {isOpen && <BurgerMenu handleClose={handleClose} />}
           </div>
         </div>
