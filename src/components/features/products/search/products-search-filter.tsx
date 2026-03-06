@@ -11,7 +11,6 @@ export default function ProductsSearchFilter({
   filterOption,
   searchQuery,
 }: ProductsSearchFilterProps) {
-  console.log('Filtering products with:', { filterOption, searchQuery });
   let productsToFilter = [...allProducts];
 
   if (filterOption && filterOption !== 'All') {
