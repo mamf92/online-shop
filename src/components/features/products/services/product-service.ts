@@ -1,0 +1,29 @@
+import { Product } from '@/types/product';
+import { PaginatedResponse, SingleResponse } from '@/types/api/api-response-types';
+import { get } from '@/lib/noroff/api-client';
+import { PaginationOptions, SortingOptions } from '@/types/api/serviceOptions';
+
+export async function getProductById(productId: string): Promise<SingleResponse<Product>> {
+  const response = await get<SingleResponse<Product>>(`/online-shop/${productId}`);
+  return response;
+}
+
+export async function getAllProducts(): Promise<PaginatedResponse<Product>> {
+  return await get<PaginatedResponse<Product>>(`/online-shop`);
+}
+
+export async function getPaginatedProducts({
+  page = 1,
+  limit = 10,
+}: PaginationOptions): Promise<PaginatedResponse<Product>> {
+  return await get<PaginatedResponse<Product>>(`/online-shop?page=${page}&limit=${limit}`);
+}
+
+export async function getSortedProducts({
+  sortField = 'title',
+  sortOrder = 'desc',
+}: SortingOptions): Promise<PaginatedResponse<Product>> {
+  return await get<PaginatedResponse<Product>>(
+    `/online-shop?sort=${sortField}&sortOrder=${sortOrder}`,
+  );
+}

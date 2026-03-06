@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Header from '@/components/layout/Header';
 import { Aboreto, Alegreya_Sans_SC, Zen_Kurenaido, Inter } from 'next/font/google';
 import './globals.css';
 
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${aboreto.variable} ${alegreyaSansSC.variable} ${zenKurenaido.variable} ${inter.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
