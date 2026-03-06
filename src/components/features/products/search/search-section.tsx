@@ -1,5 +1,5 @@
 import ProductsSearchFilter from '@/components/features/products/search/products-search-filter';
-import { ProductGrid } from '@/components/features/products/product-grid';
+import ProductGrid from '@/components/features/products/product-grid';
 import { getAllProducts } from '../services/product-service';
 import SearchForm from './search-form';
 import FilterDropdown from '@/components/features/products/search/filter-dropdown';
