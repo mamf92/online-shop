@@ -65,7 +65,7 @@ function SearchForm() {
               <button
                 type="button"
                 onClick={onReset}
-                className="absolute top-1/2 right-1 -translate-y-1/2 text-gray-400"
+                className="absolute top-1/2 right-1 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-gray-600"
               >
                 <X className="h-4 w-4" />
               </button>
