@@ -9,7 +9,7 @@ interface ShoppingCartProps {
 }
 
 export function ShoppingCart({ mode }: ShoppingCartProps) {
-  const { items } = useCartStore();
+  const { items, removeItem, updateQuantity } = useCartStore();
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col px-0 py-10 sm:px-6">
       <div
@@ -48,15 +48,19 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
             </div>
             <div className="p-2 text-right">${line.discountedPrice.toFixed(2)}</div>
             <div className="flex items-center justify-end gap-2 p-2 text-right">
-              {mode === 'cart' && <div>+</div>}
+              {mode === 'cart' && (
+                <div onClick={() => updateQuantity(line.id, line.quantity + 1)}>+</div>
+              )}
               {line.quantity}
-              {mode === 'cart' && <div>-</div>}
+              {mode === 'cart' && (
+                <div onClick={() => updateQuantity(line.id, line.quantity - 1)}>-</div>
+              )}
             </div>
             <div className="p-2 text-right">
               ${(line.quantity * line.discountedPrice).toFixed(2)}
             </div>
             {mode === 'cart' && (
-              <div className="sm:p-2">
+              <div className="sm:p-2" onClick={() => removeItem(line.id)}>
                 <Trash2 className="h-4 w-4" />
               </div>
             )}
