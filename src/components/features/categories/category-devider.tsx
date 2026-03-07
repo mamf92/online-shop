@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 export default function CategoryDivider() {
@@ -14,7 +13,7 @@ export default function CategoryDivider() {
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-row justify-center gap-8 sm:gap-6 md:gap-4">
           {items.map((item) => (
-            <div key={item.id} className="flex flex-shrink-0 flex-col items-center">
+            <div key={item.id} className="flex shrink-0 flex-col items-center">
               <a href={`/categories/${item.name.toLowerCase()}`} className="">
                 <Image
                   src={item.image}
