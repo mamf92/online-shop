@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Aboreto, Alegreya_Sans_SC, Zen_Kurenaido, Inter } from 'next/font/google';
 import './globals.css';
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
