@@ -45,7 +45,7 @@ function ContactForm() {
             placeholder="Subject"
             {...register('subject', { required: 'Subject is required' })}
             aria-invalid={errors.subject ? 'true' : 'false'}
-            className="text-primary-brown w-full rounded-sm border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
+            className="text-primary-brown w-full rounded-xs border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
           />
         </div>
         {errors.subject && (
@@ -66,7 +66,7 @@ function ContactForm() {
             placeholder="Name"
             {...register('name', { required: 'Name is required' })}
             aria-invalid={errors.name ? 'true' : 'false'}
-            className="text-primary-brown w-full rounded-sm border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
+            className="text-primary-brown w-full rounded-xs border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
           />
         </div>
         {errors.name && (
@@ -87,7 +87,7 @@ function ContactForm() {
             placeholder="Email"
             {...register('email', { required: 'Email is required' })}
             aria-invalid={errors.email ? 'true' : 'false'}
-            className="text-primary-brown w-full rounded-sm border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
+            className="text-primary-brown w-full rounded-xs border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
           />
         </div>
         {errors.email && (
@@ -106,7 +106,7 @@ function ContactForm() {
             placeholder="Message"
             {...register('message', { required: 'Message is required' })}
             aria-invalid={errors.message ? 'true' : 'false'}
-            className="text-primary-brown w-full rounded-sm border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
+            className="text-primary-brown w-full rounded-xs border bg-white px-1 py-1 text-sm placeholder-current md:text-base"
           />
         </div>
         {errors.message && (
