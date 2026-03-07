@@ -29,7 +29,14 @@ export const useCartStore = create<CartStore>()(
       },
       updateQuantity: (productId, quantity) => {
         set((state) => ({
-          items: state.items.map((item) => (item.id === productId ? { ...item, quantity } : item)),
+          items: state.items
+            .map((item) => {
+              if (item.id === productId) {
+                return { ...item, quantity };
+              }
+              return item;
+            })
+            .filter((item) => item.quantity > 0) as typeof state.items,
         }));
       },
       clearCart: () => {
