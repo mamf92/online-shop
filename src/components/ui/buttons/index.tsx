@@ -15,7 +15,7 @@ export function StyledButton({
   variant = 'primary',
 }: StyledButtonProps) {
   const baseStyles =
-    'font-label text-xs md:text-base text-white py-1 px-5 rounded-sm transition duration-150 ease-in-out';
+    'font-label text-xs md:text-base text-white py-1 px-5 rounded-xs transition duration-150 ease-in-out';
 
   const primaryStyles =
     'bg-secondary hover:bg-primary text-white disabled:bg-primary/60 disabled:text-gray-500 disabled:cursor-not-allowed';
