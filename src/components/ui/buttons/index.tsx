@@ -6,6 +6,7 @@ interface StyledButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   variant?: 'primary' | 'secondary';
+  className?: string;
 }
 
 export function StyledButton({
@@ -13,6 +14,7 @@ export function StyledButton({
   onClick,
   disabled,
   variant = 'primary',
+  className = '',
 }: StyledButtonProps) {
   const baseStyles =
     'font-label text-xs md:text-base text-white py-1 px-5 rounded-xs transition duration-150 ease-in-out';
@@ -24,7 +26,11 @@ export function StyledButton({
   const variantStyles = variant === 'primary' ? primaryStyles : secondaryStyles;
 
   return (
-    <button className={`${baseStyles} ${variantStyles}`} onClick={onClick} disabled={disabled}>
+    <button
+      className={`${baseStyles} ${variantStyles} ${className}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

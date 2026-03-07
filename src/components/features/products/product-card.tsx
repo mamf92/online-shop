@@ -28,7 +28,7 @@ export function ProductCard({ product }: CardProps) {
           <p className="font-label mt-2 text-base">{product.price}$</p>
           <button
             onClick={() => addItem(product)}
-            className="font-label bg-primary text-accent mt-6 w-full rounded-sm py-2 text-sm uppercase sm:mt-12 sm:w-auto"
+            className="font-label bg-accent mt-6 w-full rounded-xs p-1 px-2 text-sm text-black sm:px-10"
           >
             Add to Cart
           </button>
