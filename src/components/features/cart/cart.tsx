@@ -3,6 +3,7 @@
 import { Trash2 } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ShoppingCartProps {
   mode: 'checkout' | 'cart';
@@ -36,16 +37,18 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
                 : 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr]'
             }`}
           >
-            <div className="flex items-center">
-              <Image
-                src={line.image.url}
-                alt={line.image.alt}
-                width={48}
-                height={48}
-                className="mr-2 inline-block h-12 w-12"
-              />
-              {line.title}
-            </div>
+            <Link href={`/products/${line.id}`}>
+              <div className="flex items-center">
+                <Image
+                  src={line.image.url}
+                  alt={line.image.alt}
+                  width={48}
+                  height={48}
+                  className="mr-2 inline-block h-12 w-12"
+                />
+                {line.title}
+              </div>
+            </Link>
             <div className="p-2 text-right">${line.discountedPrice.toFixed(2)}</div>
             <div className="flex items-center justify-end gap-2 p-2 text-right">
               {mode === 'cart' && (
