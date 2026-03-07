@@ -1,16 +1,14 @@
 'use client';
 
 import { Trash2 } from 'lucide-react';
-import { CartItem } from '@/types/cart';
 import { useCartStore } from '@/store/cartStore';
 import Image from 'next/image';
-import { use } from 'react';
 
-interface CheckoutProps {
+interface ShoppingCartProps {
   mode: 'checkout' | 'cart';
 }
 
-export function Checkout({ mode }: CheckoutProps) {
+export function ShoppingCart({ mode }: ShoppingCartProps) {
   const { items } = useCartStore();
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col px-0 py-10 sm:px-6">

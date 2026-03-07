@@ -26,7 +26,7 @@ export default function Header() {
         <TextLogo />
       </div>
       <div className="col-5 flex items-center justify-end gap-3">
-        <Link href="/checkout">
+        <Link href="/cart">
           <CartIcon />
         </Link>
 
