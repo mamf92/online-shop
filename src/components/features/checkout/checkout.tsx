@@ -18,7 +18,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col px-0 py-10 sm:px-6">
       <div
-        className={`font-heading text-white rounded-xs bg-secondary mb-4 grid w-full items-center px-2 text-[14px] uppercase ${
+        className={`font-heading bg-secondary mb-4 grid w-full items-center rounded-xs px-2 text-[14px] text-white uppercase ${
           mode === 'cart'
             ? 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr_0.3fr]'
             : 'grid-cols-[minmax(0,1.8fr)_0.8fr_0.7fr_0.8fr]'
