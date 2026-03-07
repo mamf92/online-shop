@@ -1,20 +1,17 @@
-import react from 'react';
-import { Trash2 } from 'lucide-react';
-import { Product } from '@/types/product';
-import Image from 'next/image';
+'use client';
 
-interface MockCartLines {
-  id: string;
-  quantity: number;
-  product: Product;
-}
+import { Trash2 } from 'lucide-react';
+import { CartItem } from '@/types/cart';
+import { useCartStore } from '@/store/cartStore';
+import Image from 'next/image';
+import { use } from 'react';
 
 interface CheckoutProps {
-  Lines: MockCartLines[];
   mode: 'checkout' | 'cart';
 }
 
-export function Checkout({ Lines, mode }: CheckoutProps) {
+export function Checkout({ mode }: CheckoutProps) {
+  const { items } = useCartStore();
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col px-0 py-10 sm:px-6">
       <div
@@ -32,7 +29,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
       </div>
 
       <div className="font-body mx-auto flex w-full max-w-3xl flex-col">
-        {Lines.map((line) => (
+        {items.map((line) => (
           <div
             key={line.id}
             className={`mb-4 grid items-center p-2 ${
@@ -43,22 +40,22 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
           >
             <div className="flex items-center">
               <Image
-                src={line.product.image.url}
-                alt={line.product.image.alt}
+                src={line.image.url}
+                alt={line.image.alt}
                 width={48}
                 height={48}
                 className="mr-2 inline-block h-12 w-12"
               />
-              {line.product.title}
+              {line.title}
             </div>
-            <div className="p-2 text-right">${line.product.discountedPrice.toFixed(2)}</div>
+            <div className="p-2 text-right">${line.discountedPrice.toFixed(2)}</div>
             <div className="flex items-center justify-end gap-2 p-2 text-right">
               {mode === 'cart' && <div>+</div>}
               {line.quantity}
               {mode === 'cart' && <div>-</div>}
             </div>
             <div className="p-2 text-right">
-              ${(line.quantity * line.product.discountedPrice).toFixed(2)}
+              ${(line.quantity * line.discountedPrice).toFixed(2)}
             </div>
             {mode === 'cart' && (
               <div className="sm:p-2">
@@ -70,9 +67,7 @@ export function Checkout({ Lines, mode }: CheckoutProps) {
       </div>
       <div className="font-semibold-body px-6 py-2 text-right text-lg">
         Total: $
-        {Lines.reduce((sum, line) => sum + line.quantity * line.product.discountedPrice, 0).toFixed(
-          2,
-        )}
+        {items.reduce((sum, line) => sum + line.quantity * line.discountedPrice, 0).toFixed(2)}
       </div>
     </div>
   );
