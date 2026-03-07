@@ -1,4 +1,5 @@
 import SearchSection from '@/components/features/products/search/search-section';
+import HeroImage from '@/components/ui/hero-image';
 
 interface HomeProps {
   searchParams: {
@@ -10,10 +11,13 @@ interface HomeProps {
 export default async function Home({ searchParams }: HomeProps) {
   const { q, filter } = await searchParams;
   return (
-    <div className="min-h-screen">
-      <main className="mx-auto flex w-full max-w-3xl items-center py-10">
-        <SearchSection query={q || ''} filter={filter || 'All'} />
-      </main>
-    </div>
+    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center">
+      <HeroImage
+        src="/images/HeroImage.jpg"
+        alt="Curated essentials for everyday life"
+        name="Curated essentials for everyday life"
+      />
+      <SearchSection query={q || ''} filter={filter || 'All'} />
+    </main>
   );
 }

@@ -48,7 +48,6 @@ async function apiClient<T = unknown>(endpoint: string): Promise<T> {
     return await response.json();
   } catch (error) {
     if (error instanceof ApiClientError) throw error;
-    console.error('API Client Error:', error);
     throw error;
   }
 }

@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${aboreto.variable} ${alegreyaSansSC.variable} ${zenKurenaido.variable} ${inter.variable} antialiased`}
+        className={`${aboreto.variable} ${alegreyaSansSC.variable} ${zenKurenaido.variable} ${inter.variable} flex min-h-screen flex-col antialiased`}
       >
         <Header />
         {children}
