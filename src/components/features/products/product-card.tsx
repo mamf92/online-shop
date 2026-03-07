@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useCartStore } from '@/store/cartStore';
 import { Product } from '@/types/product';
 import Image from 'next/image';
 
@@ -7,6 +10,7 @@ interface CardProps {
 }
 
 export function ProductCard({ product }: CardProps) {
+  const { addItem } = useCartStore();
   return (
     <div className="mx-auto max-w-3xl">
       <h1 className="font-hero text-accent text-center text-[2rem]">{product.title}</h1>
@@ -22,6 +26,12 @@ export function ProductCard({ product }: CardProps) {
 
           <h3 className="font-label mt-6 text-base sm:mt-12">Price</h3>
           <p className="font-label mt-2 text-base">{product.price}$</p>
+          <button
+            onClick={() => addItem(product)}
+            className="font-label bg-primary text-accent mt-6 w-full rounded-sm py-2 text-sm uppercase sm:mt-12 sm:w-auto"
+          >
+            Add to Cart
+          </button>
         </div>
         <div className="flex w-2/3 justify-center px-1 sm:w-auto sm:flex-1 sm:px-6">
           <Image
