@@ -27,7 +27,7 @@ export default function Header() {
       </div>
       <div className="col-5 flex items-center justify-end gap-3">
         <Link href="/cart">
-          <CartIcon itemsCount={48} />
+          <CartIcon />
         </Link>
 
         <div ref={menuRef}>

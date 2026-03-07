@@ -60,7 +60,7 @@ function SearchForm() {
                 placeholder="Search"
                 {...register('query')}
                 aria-invalid={errors.query ? 'true' : 'false'}
-                className="text-primary-brown w-full rounded-sm border bg-white px-1 py-1 text-xs md:text-base"
+                className="text-primary-brown w-full rounded-xs border bg-white px-1 py-1 text-xs md:text-base"
               />
               <button
                 type="button"
