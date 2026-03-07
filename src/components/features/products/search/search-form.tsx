@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SearchFormSchema } from '@/schemas/search';
@@ -24,6 +25,10 @@ function SearchForm() {
     },
     mode: 'onBlur',
   });
+
+  useEffect(() => {
+    reset({ query: searchParams.get('q') || '' });
+  }, [searchParams, reset]);
 
   const onSubmit = (data: SearchFormData) => {
     const query = data.query.trim();
@@ -60,7 +65,7 @@ function SearchForm() {
               <button
                 type="button"
                 onClick={onReset}
-                className="absolute top-1/2 right-1 -translate-y-1/2 text-gray-400"
+                className="absolute top-1/2 right-1 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-gray-600"
               >
                 <X className="h-4 w-4" />
               </button>
