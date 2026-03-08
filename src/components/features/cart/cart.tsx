@@ -38,7 +38,7 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
             }`}
           >
             <Link href={`/products/${line.id}`}>
-              <div className="font-label xs:text-base flex items-center gap-1 text-xs">
+              <div className="xs:text-base flex items-center gap-1 text-xs">
                 <Image
                   src={line.image.url}
                   alt={line.image.alt}
@@ -49,10 +49,10 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
                 {line.title}
               </div>
             </Link>
-            <div className="font-label xs:text-base xs:p-2 p-0 text-right text-sm">
+            <div className="xs:text-base xs:p-2 p-0 text-right text-sm">
               ${line.discountedPrice.toFixed(2)}
             </div>
-            <div className="font-label flex items-center justify-end gap-2 p-2 text-right">
+            <div className="flex items-center justify-end gap-2 p-2 text-right">
               {mode === 'cart' && (
                 <div onClick={() => updateQuantity(line.id, line.quantity - 1)}>-</div>
               )}
@@ -61,7 +61,7 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
                 <div onClick={() => updateQuantity(line.id, line.quantity + 1)}>+</div>
               )}
             </div>
-            <div className="font-label xs:text-base p-2 text-right text-sm">
+            <div className="xs:text-base p-2 text-right text-sm">
               ${(line.quantity * line.discountedPrice).toFixed(2)}
             </div>
             {mode === 'cart' && (
@@ -72,7 +72,7 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
           </div>
         ))}
       </div>
-      <div className="font-label px-6 py-2 text-right text-lg font-semibold">
+      <div className="px-6 py-2 text-right text-lg font-semibold">
         Total: $
         {items.reduce((sum, line) => sum + line.quantity * line.discountedPrice, 0).toFixed(2)}
       </div>
