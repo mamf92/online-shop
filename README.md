@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skretcher Online Shop
+
+Live demo: https://genuine-sundae-0c12fa.netlify.app
+
+Next.js App Router storefront built for the Noroff JavaScript Frameworks assignment. It highlights product browsing, search/sort/filter, cart checkout, and a validated contact form while consuming the Noroff online-shop API.
+
+## Table of Contents
+
+- About
+- Features
+- Tech Stack
+- Getting Started
+- API and Data
+- App Structure
+- State and Forms
+- Room for Improvement
+- Contact
+
+## About
+
+A small, responsive storefront that fetches products from the Noroff API, lets users search and filter, view details, add to cart with persisted state, and submit a validated contact form. Built with TypeScript, Tailwind, and Next.js 16.
+
+## Features
+
+- Product browse and detail pages with discount badge, price comparisons, tags, and reviews.
+- Search, filter (All/Fashion/Shoes/Electronics/Beauty), and sort (title/price/discountedPrice/rating) with URL-driven state.
+- Cart and checkout powered by Zustand with persisted storage; quantity adjust, remove, and order summary on success.
+- Contact form with react-hook-form and Zod validation (subject, name, email, message) and inline errors.
+- Responsive UI with shared header/footer and category hero/tiles.
+
+## Tech Stack
+
+- Next.js 16 (App Router), React 19, TypeScript.
+- Tailwind CSS 4, custom Google fonts.
+- Zustand for state management and persistence.
+- react-hook-form + Zod for forms and validation.
+- Noroff API client with typed responses and error handling.
 
 ## Getting Started
 
-First, run the development server:
+Prerequisites: Node 18+ recommended.
 
-```bash
+Install and run:
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build and serve production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lint/format (optional):
 
-## Learn More
+```
+npm run lint
+npm run format
+```
 
-To learn more about Next.js, take a look at the following resources:
+No environment variables are required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API and Data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Base URL: https://v2.api.noroff.dev
+- Endpoints: `/online-shop` (paginated) and `/online-shop/:id`.
+- Client-side pagination loops pages because the API lacks server-side filters; sorting is delegated to the API, filtering/search happens in-app.
 
-## Deploy on Vercel
+## App Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+/online-shop
+├── app/                      # App Router pages
+│   ├── page.tsx              # Home (hero, categories, search/sort/filter)
+│   ├── products/[id]/page.tsx# Product detail + reviews
+│   ├── categories/[category]/page.tsx
+│   ├── cart/page.tsx         # Cart
+│   ├── checkout/page.tsx     # Checkout
+│   └── checkout/success/page.tsx
+├── components/
+│   ├── features/             # Domain UI + logic
+│   │   ├── products/         # Cards, grid, search UI, product service
+│   │   ├── cart/             # Shared cart list
+│   │   ├── checkout/         # Success overview
+│   │   ├── categories/       # Category hero/divider
+│   │   └── contact/          # Contact section/form
+│   ├── layout/               # Header, Footer
+│   └── ui/                   # Buttons, logo, hero image, etc.
+├── lib/noroff/api-client.ts  # API helper
+├── store/cartStore.ts        # Zustand cart + persistence
+├── schemas/                  # Zod (contact, search)
+├── types/                    # Product and API types
+├── public/images/            # Assets
+└── README.md
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## State and Forms
+
+- Cart state is handled by Zustand with persisted storage key `cart-storage`; checkout copies cart items into `orderSummary` and clears the cart before redirecting to success.
+- Contact form uses `react-hook-form` with `zodResolver` and inline accessibility attributes for errors; submission currently shows a friendly alert and resets the form.
+
+## Room for Improvement
+
+- Add server-side filtering/pagination or caching to avoid fetching the full catalog on every search/sort.
+- Harden accessibility (focus states, keyboard controls for dropdowns, aria-live on form errors).
+- Replace alert-based contact handling with a real submission endpoint.
+- Expand test coverage and error boundaries; improve empty states and loading skeletons.
+- More design polish and performance checks (image optimization, bundle trimming).
+- Broader backlog is tracked in the GitHub project: https://github.com/mamf92/online-shop
+
+## Contact
+
+- GitHub: https://github.com/Malin-Malin
+- GitHub: https://github.com/mamf92
+- LinkedIn: https://www.linkedin.com/in/malin-skrettingland
+- LinkedIn: https://www.linkedin.com/in/mamf92/
