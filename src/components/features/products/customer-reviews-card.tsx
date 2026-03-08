@@ -9,7 +9,7 @@ interface CustomerReviewsCardProps {
 export function CustomerReviewsCard({ review, index = 0 }: CustomerReviewsCardProps) {
   return (
     <div
-      className={`${index % 2 === 0 ? 'bg-muted-brown text-black' : 'flex-row-reverse text-white'} flex justify-around p-4`}
+      className={`${index % 2 === 0 ? 'bg-muted-brown text-black' : 'flex-row-reverse text-foreground'} flex justify-around p-4`}
     >
       <div className="flex w-2/3 flex-col items-center justify-center">
         <p className="font-label text-xs">{review.username}</p>
