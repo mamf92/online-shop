@@ -6,6 +6,7 @@ export const useCartStore = create<CartStore>()(
   persist(
     (set) => ({
       items: [],
+      orderSummary: [],
       addItem: (product, quantity = 1) => {
         set((state) => {
           const existingItem = state.items.find((item) => item.id === product.id);
@@ -39,9 +40,8 @@ export const useCartStore = create<CartStore>()(
             .filter((item) => item.quantity > 0) as typeof state.items,
         }));
       },
-      clearCart: () => {
-        set({ items: [] });
-      },
+      clearCart: () => set({ items: [] }),
+      setOrderSummary: (items) => set({ orderSummary: items }),
     }),
     {
       name: 'cart-storage',
