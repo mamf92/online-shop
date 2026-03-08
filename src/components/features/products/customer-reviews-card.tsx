@@ -18,7 +18,7 @@ export function CustomerReviewsCard({ review, index = 0 }: CustomerReviewsCardPr
           {[...Array(5)].map((_, i) => (
             <span
               key={i}
-              className={`text-xs ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+              className={`text-s drop-shadow-[0_0px_2px_rgba(0,0,0,0.8)] ${i < review.rating ? 'text-yellow-500' : 'text-gray-500'}`}
             >
               ★
             </span>
