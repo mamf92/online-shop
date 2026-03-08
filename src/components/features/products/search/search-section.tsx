@@ -24,7 +24,7 @@ export default async function SearchSection({ query, filter, sortField }: Search
   return (
     <div className="mx-auto flex w-full flex-col items-center gap-2 px-4 pb-4">
       <div>
-        <h2 className="font-hero text-secondary-brown text-2xl font-medium">Search</h2>
+        <h2 className="font-hero text-muted-brown text-2xl font-medium">Search</h2>
       </div>
       <div className="z-0 flex w-84 justify-between gap-2 md:w-lg lg:w-172">
         <SearchForm />
