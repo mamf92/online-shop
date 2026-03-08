@@ -15,7 +15,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const filteredProducts = products.data.filter((product) => product.tags.includes(category));
 
   return (
-    <main className="flex-1">
+    <main className="mx-auto flex w-full flex-1 flex-col items-center gap-2 px-4 pb-4">
       <HeroImage category={category} />
       <ProductGrid products={filteredProducts} className="mt-6" />
       <section className="mx-auto w-full max-w-3xl px-6 py-10">

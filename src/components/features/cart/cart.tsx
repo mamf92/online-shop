@@ -38,28 +38,30 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
             }`}
           >
             <Link href={`/products/${line.id}`}>
-              <div className="flex items-center">
+              <div className="xs:text-base flex items-center gap-1 text-xs">
                 <Image
                   src={line.image.url}
                   alt={line.image.alt}
                   width={48}
                   height={48}
-                  className="mr-2 inline-block h-12 w-12"
+                  className="inline-block h-12 w-12"
                 />
                 {line.title}
               </div>
             </Link>
-            <div className="p-2 text-right">${line.discountedPrice.toFixed(2)}</div>
+            <div className="xs:text-base xs:p-2 p-0 text-right text-sm">
+              ${line.discountedPrice.toFixed(2)}
+            </div>
             <div className="flex items-center justify-end gap-2 p-2 text-right">
-              {mode === 'cart' && (
-                <div onClick={() => updateQuantity(line.id, line.quantity + 1)}>+</div>
-              )}
-              {line.quantity}
               {mode === 'cart' && (
                 <div onClick={() => updateQuantity(line.id, line.quantity - 1)}>-</div>
               )}
+              {line.quantity}
+              {mode === 'cart' && (
+                <div onClick={() => updateQuantity(line.id, line.quantity + 1)}>+</div>
+              )}
             </div>
-            <div className="p-2 text-right">
+            <div className="xs:text-base p-2 text-right text-sm">
               ${(line.quantity * line.discountedPrice).toFixed(2)}
             </div>
             {mode === 'cart' && (
@@ -70,7 +72,7 @@ export function ShoppingCart({ mode }: ShoppingCartProps) {
           </div>
         ))}
       </div>
-      <div className="font-semibold-body px-6 py-2 text-right text-lg">
+      <div className="px-6 py-2 text-right text-lg font-semibold">
         Total: $
         {items.reduce((sum, line) => sum + line.quantity * line.discountedPrice, 0).toFixed(2)}
       </div>
