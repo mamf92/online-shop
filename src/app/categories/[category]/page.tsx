@@ -11,7 +11,7 @@ type CategoryPageProps = {
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { category } = await params;
 
-  const products = await getAllProducts();
+  const products = await getAllProducts({ sortField: 'title', sortOrder: 'asc' });
   const filteredProducts = products.data.filter((product) => product.tags.includes(category));
 
   return (

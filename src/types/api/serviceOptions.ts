@@ -3,7 +3,7 @@ export interface PaginationOptions {
   limit?: number;
 }
 
-type FieldOptions = 'title' | 'price' | 'discountedPrice' | 'rating';
+export type FieldOptions = 'title' | 'price' | 'discountedPrice' | 'rating';
 
 export interface SortingOptions {
   sortField: FieldOptions;
