@@ -10,7 +10,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductById(id);
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-6 py-10">
+    <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-10">
       <ProductCard product={product.data} />
       <CustomerReviewsList reviews={product.data.reviews} />
     </main>
