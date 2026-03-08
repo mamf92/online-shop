@@ -26,20 +26,27 @@ function SearchForm() {
     mode: 'onBlur',
   });
 
+  const currentFilter = searchParams.get('filter') ?? 'All';
+  const currentSortField = searchParams.get('sortField') ?? 'title';
+
   useEffect(() => {
     reset({ query: searchParams.get('q') || '' });
   }, [searchParams, reset]);
 
   const onSubmit = (data: SearchFormData) => {
     const query = data.query.trim();
-    const currentFilter = searchParams.get('filter') || 'All';
-    router.push(`/?q=${encodeURIComponent(query)}&filter=${encodeURIComponent(currentFilter)}`);
+    router.push(
+      `/?q=${encodeURIComponent(query)}&filter=${encodeURIComponent(currentFilter)}&sortField=${encodeURIComponent(currentSortField)}`,
+    );
   };
 
   const onReset = () => {
     reset();
     const currentFilter = searchParams.get('filter') || 'All';
-    router.push(`/?filter=${encodeURIComponent(currentFilter)}`);
+    const currentSortField = searchParams.get('sortField') || 'title';
+    router.push(
+      `/?filter=${encodeURIComponent(currentFilter)}&sortField=${encodeURIComponent(currentSortField)}`,
+    );
   };
 
   return (
