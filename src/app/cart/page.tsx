@@ -18,7 +18,7 @@ export default function CartPage() {
         tabIndex={items.length > 0 ? -1 : undefined}
       >
         Checkout
-      </StyledButton>
+      </Link>
     </main>
   );
 }
