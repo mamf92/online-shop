@@ -9,12 +9,18 @@ export default function CategoryDivider() {
   ];
 
   return (
-    <div className="bg-primary-brown w-full px-6 py-10">
-      <div className="mx-auto max-w-3xl">
-        <div className="flex flex-row justify-center gap-8 sm:gap-6 md:gap-4">
+    <div className="bg-primary-brown w-full px-6 py-8">
+      <div className="mx-auto flex max-w-3xl flex-col gap-3">
+        <h1 className="font-hero text-muted-brown text-center text-3xl uppercase">
+          Shop by category
+        </h1>
+        <div className="xs:justify-evenly flex flex-row justify-between sm:justify-center sm:gap-6 md:gap-4">
           {items.map((item) => (
             <div key={item.id} className="flex shrink-0 flex-col items-center">
-              <a href={`/categories/${item.name.toLowerCase()}`} className="">
+              <a
+                href={`/categories/${item.name.toLowerCase()}`}
+                className="flex flex-col items-center"
+              >
                 <Image
                   src={item.image}
                   alt={item.name}

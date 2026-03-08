@@ -23,6 +23,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-heading-color: var(--color-changing);
+
+  --breakpoint-xs: 30rem;
 }
 
 @media (prefers-color-scheme: dark) {
