@@ -8,7 +8,7 @@ export default function CartPage() {
   const { items } = useCartStore();
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-10">
-      <h1 className="font-hero text-heading-color text-center text-[2rem]">Cart</h1>
+      <h1 className="font-hero text-muted-brown text-center text-[2rem]">Cart</h1>
       <ShoppingCart mode="cart" />
 
       <Link
