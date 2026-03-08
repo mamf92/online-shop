@@ -9,7 +9,7 @@ interface CustomerReviewsCardProps {
 export function CustomerReviewsCard({ review, index = 0 }: CustomerReviewsCardProps) {
   return (
     <div
-      className={`${index % 2 === 0 ? 'bg-muted-brown text-black' : 'flex-row-reverse text-foreground'} flex justify-around p-4`}
+      className={`${index % 2 === 0 ? 'bg-muted-brown text-black' : 'text-foreground flex-row-reverse'} flex justify-around p-4`}
     >
       <div className="flex w-2/3 flex-col items-center justify-center">
         <p className="font-label text-xs">{review.username}</p>
@@ -18,7 +18,7 @@ export function CustomerReviewsCard({ review, index = 0 }: CustomerReviewsCardPr
           {[...Array(5)].map((_, i) => (
             <span
               key={i}
-              className={`text-s drop-shadow-[0_0px_2px_rgba(0,0,0,0.8)] ${i < review.rating ? 'text-yellow-500' : 'text-gray-500'}`}
+              className={`text-s drop-shadow-[0_0px_2px_rgba(0,0,0,0.8)] ${i < review.rating ? 'text-yellow-500' : index % 2 === 0 ? '' : 'text-gray-500'}`}
             >
               ★
             </span>
