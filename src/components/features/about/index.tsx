@@ -21,7 +21,7 @@ export default function About() {
           alt="Mood Image"
           width={600}
           height={400}
-          className="h-auto w-full max-w-[600px] object-cover md:w-[45%] md:max-w-none md:shrink-0"
+          className="h-auto w-full max-w-150 object-cover md:w-[45%] md:max-w-none md:shrink-0"
         />
       </div>
       <div className="mb-10 flex flex-col items-center gap-8 md:flex-row-reverse">
@@ -43,7 +43,7 @@ export default function About() {
           alt="Mood Image"
           width={600}
           height={400}
-          className="h-auto w-full max-w-[600px] object-cover md:w-[45%] md:max-w-none md:shrink-0"
+          className="h-auto w-full max-w-150 object-cover md:w-[45%] md:max-w-none md:shrink-0"
         />
       </div>
     </main>
