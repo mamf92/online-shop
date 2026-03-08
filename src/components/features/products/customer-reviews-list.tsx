@@ -15,7 +15,7 @@ export function CustomerReviewsList({ reviews }: CustomerReviewsListProps) {
     <div className="space-y-4">
       {reviews.map((review, index) => (
         <div key={review.id}>
-          <CustomerReviewsCard review={review} isFirst={index === 0} />
+          <CustomerReviewsCard review={review} index={index} />
         </div>
       ))}
     </div>
