@@ -6,7 +6,7 @@ import { FieldOptions } from '@/types/api/serviceOptions';
 interface HomeProps {
   searchParams: {
     q?: string;
-    filter?: 'All' | 'Fashion' | 'Shoes' | 'Electronics' | 'Beauty';
+    filter?: string;
     sortField?: FieldOptions;
   };
 }

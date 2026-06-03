@@ -4,9 +4,17 @@ import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { StyledButton } from '@/components/ui/buttons';
 
-const FILTERS = ['All', 'Fashion', 'Shoes', 'Electronics', 'Beauty'] as const;
+interface FilterDropdownProps {
+  filters: string[];
+}
 
-export default function FilterDropdown() {
+function formatFilterLabel(filter: string) {
+  return decodeURIComponent(filter)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
+export default function FilterDropdown({ filters }: FilterDropdownProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +22,7 @@ export default function FilterDropdown() {
   const currentFilter = searchParams.get('filter') ?? 'All';
   const currentQuery = searchParams.get('q') ?? '';
   const currentSortField = searchParams.get('sortField') ?? 'title';
+  const availableFilters = ['All', ...filters];
 
   function handleFilterChange(filter: string) {
     router.push(
@@ -25,8 +34,7 @@ export default function FilterDropdown() {
   return (
     <div className="relative">
       <StyledButton variant="primary" onClick={() => setIsOpen(!isOpen)}>
-        {' '}
-        {currentFilter}
+        {formatFilterLabel(currentFilter)}
       </StyledButton>
       {isOpen && (
         <div
@@ -34,7 +42,7 @@ export default function FilterDropdown() {
           aria-label="Filter products"
           className="bg-secondary absolute top-20 right-0 mt-2 w-40 -translate-y-1/2 rounded-xs"
         >
-          {FILTERS.map((filter) => (
+          {availableFilters.map((filter) => (
             <div
               key={filter}
               role="option"
@@ -44,7 +52,7 @@ export default function FilterDropdown() {
                 currentFilter === filter ? 'bg-primary-brown text-white' : ''
               }`}
             >
-              {filter}
+              {formatFilterLabel(filter)}
             </div>
           ))}
         </div>

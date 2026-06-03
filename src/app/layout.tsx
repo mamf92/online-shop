@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Breadcrumb from '@/components/layout/breadcrumb';
 import { Aboreto, Alegreya_Sans_SC, Zen_Kurenaido, Inter } from 'next/font/google';
 import './globals.css';
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         className={`${aboreto.variable} ${alegreyaSansSC.variable} ${zenKurenaido.variable} ${inter.variable} flex min-h-screen flex-col antialiased`}
       >
         <Header />
+        <Breadcrumb />
         {children}
         <Footer />
       </body>

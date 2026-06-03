@@ -8,12 +8,15 @@ import { FieldOptions } from '@/types/api/serviceOptions';
 
 interface SearchSectionProps {
   query: string;
-  filter: 'All' | 'Fashion' | 'Shoes' | 'Electronics' | 'Beauty';
+  filter: string;
   sortField: FieldOptions;
 }
 
 export default async function SearchSection({ query, filter, sortField }: SearchSectionProps) {
   const allProducts = await getAllProducts({ sortField: sortField, sortOrder: 'asc' });
+  const availableFilters = Array.from(
+    new Set(allProducts.data.flatMap((product) => product.tags.map((tag) => tag.toLowerCase()))),
+  ).sort((left, right) => left.localeCompare(right));
 
   const filteredProducts = ProductsSearchFilter({
     allProducts: allProducts.data,
@@ -28,7 +31,7 @@ export default async function SearchSection({ query, filter, sortField }: Search
       </div>
       <div className="z-0 flex w-84 justify-between gap-2 md:w-lg lg:w-172">
         <SearchForm />
-        <FilterDropdown />
+        <FilterDropdown filters={availableFilters} />
         <SortDropdown />
       </div>
       {filteredProducts.length === 0 ? (

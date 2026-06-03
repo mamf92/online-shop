@@ -1,12 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { getFeaturedCategoryList } from '@/components/features/categories/category-metadata';
 
 export default function CategoryDivider() {
-  const items = [
-    { id: 1, image: '/images/CategoryFashion.jpg', name: 'Fashion' },
-    { id: 4, image: '/images/CategoryShoes.jpg', name: 'Shoes' },
-    { id: 2, image: '/images/CategoryElectronics.jpg', name: 'Electronics' },
-    { id: 3, image: '/images/CategoryBeauty.jpg', name: 'Beauty' },
-  ];
+  const items = getFeaturedCategoryList();
 
   return (
     <div className="bg-primary-brown w-full px-6 py-8">
@@ -16,13 +13,10 @@ export default function CategoryDivider() {
         </h1>
         <div className="xs:justify-evenly flex flex-row justify-between sm:justify-center sm:gap-6 md:gap-4">
           {items.map((item) => (
-            <div key={item.id} className="flex shrink-0 flex-col items-center">
-              <a
-                href={`/categories/${item.name.toLowerCase()}`}
-                className="flex flex-col items-center"
-              >
+            <div key={item.slug} className="flex shrink-0 flex-col items-center">
+              <Link href={`/categories/${item.slug}`} className="flex flex-col items-center">
                 <Image
-                  src={item.image}
+                  src={item.src}
                   alt={item.name}
                   width={160}
                   height={160}
@@ -31,7 +25,7 @@ export default function CategoryDivider() {
                 <p className="font-heading text-muted-brown text-center text-sm uppercase">
                   {item.name}
                 </p>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
