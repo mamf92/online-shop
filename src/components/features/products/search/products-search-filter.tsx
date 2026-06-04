@@ -2,7 +2,7 @@ import { Product } from '@/types/product';
 
 interface ProductsSearchFilterProps {
   allProducts: Product[];
-  filterOption?: 'All' | 'Fashion' | 'Shoes' | 'Electronics' | 'Beauty';
+  filterOption?: string;
   searchQuery?: string;
 }
 

@@ -1,41 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import { getCategoryDetails } from '@/components/features/categories/category-metadata';
 
 interface HeroImageProps {
   category: string;
 }
 
-interface CategoryDetails {
-  src: string;
-  alt: string;
-  name: string;
-}
-
-const categories: Record<string, CategoryDetails> = {
-  fashion: {
-    src: '/images/CategoryFashion.jpg',
-    alt: 'Fashion Category',
-    name: 'Fashion',
-  },
-  shoes: {
-    src: '/images/CategoryShoes.jpg',
-    alt: 'Shoes Category',
-    name: 'Shoes',
-  },
-  electronics: {
-    src: '/images/CategoryElectronics.jpg',
-    alt: 'Electronics Category',
-    name: 'Electronics',
-  },
-  beauty: {
-    src: '/images/CategoryBeauty.jpg',
-    alt: 'Beauty Category',
-    name: 'Beauty',
-  },
-};
-
 export default function HeroImage({ category }: HeroImageProps) {
-  const heroDetails = category ? categories[category.toLowerCase()] : categories.beauty;
+  const heroDetails = getCategoryDetails(category || '');
 
   return (
     <div>
